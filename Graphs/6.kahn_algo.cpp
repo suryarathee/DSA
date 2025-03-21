@@ -4,12 +4,15 @@
 #include<vector>
 #include<queue>
 using namespace std;
-template <typename T>
+template <typename T>/*template format for different data types*/
 class graph{
     public:
     unordered_map< T, list<T> > adj;
-    void buildgraph(bool direction)
+    void buildgraph()
     {
+        bool direction = false;
+        cout<<"enter true for directed and false for undirected graph"
+        cin>>direction;
         int n,m;
         cout<<"Enter the number of Nodes";
         cin>>n;
@@ -134,7 +137,7 @@ class graph{
 int main()
 {
     graph<int> g;
-    g.buildgraph(true);
+    g.buildgraph();
     g.printadjlist();
     vector<int> a=g.kahn_algo();
     for(auto i:a)

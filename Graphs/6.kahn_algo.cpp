@@ -11,7 +11,7 @@ class graph{
     void buildgraph()
     {
         bool direction = false;
-        cout<<"enter true for directed and false for undirected graph"
+        cout<<"enter true for directed and false for undirected graph";
         cin>>direction;
         int n,m;
         cout<<"Enter the number of Nodes";

@@ -49,7 +49,7 @@ class graph{
         queue<T> q;
         vector<T> ans;
         q.push(source);
-        visited[source]==true;
+        visited[source]=true;
         while (!q.empty())
         {
             int frontnode = q.front();

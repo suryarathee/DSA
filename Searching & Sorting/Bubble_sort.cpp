@@ -6,15 +6,18 @@ void bubble_sort(vector<int> & nums)
     int n = nums.size();
     for (int i = 0; i < n; i++)
     {
+        int flag = true;
         for(int j= 0 ;j<n-i;j++)
         {
             if(nums[j]>nums[j+1])
             {
+                flag = false;
                 int n = nums[j];
                 nums[j] = nums[j+1];
                 nums[j+1] = n;
             }
         }
+        if(false) break;
     }
 }
 int main()

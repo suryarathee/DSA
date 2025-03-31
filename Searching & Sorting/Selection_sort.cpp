@@ -1,4 +1,7 @@
 /*Selection sorting algorithm finds the smallest element and move it to  the front*/
+/*Constend memory space O(1)
+Time complexity O(n^2) means it is slower than quick sort and merge sort*/
+/*Suitable for small list when overhead of more complex algorithm isn't justified and memory writing is costly*/
 #include<iostream>
 #include<vector>
 using namespace std;

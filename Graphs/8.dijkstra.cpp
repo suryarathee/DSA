@@ -4,6 +4,7 @@
 #include<stack>
 #include<vector>
 #include<list>
+#include<queue>
 using namespace std;
 class graph
 {
@@ -78,6 +79,33 @@ class graph
             cout<<i<<" ";
         }
         }
+        void dijkstra_minheap(int src)
+        {
+            vector<int> dist(vertex,INT_MAX);
+            priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>> pq;
+            pq.push({0,src});
+            dist[src]=0;
+            while(!pq.empty()){
+                vector<int> top = pq.top();
+                pq.pop();
+                int u = top[1];
+                for(auto x:adj[u])
+                {
+                    int v = x.first;
+                    int w = x.second;
+                    if(dist [v]>dist[u]+w)
+                    {
+                        dist[v] = dist[u]+w;
+                        pq.push({dist[v],v});
+                    }
+                }
+            }
+            for(auto i:dist)
+            {
+                cout<<i<<" ";
+            }
+            
+        }
 };
 int main()
 {
@@ -85,5 +113,6 @@ int main()
     g.buildgraph();
     g.printadjlist();
     g.dijkstra(0);
+    g.dijkstra_minheap(0);
     return 0;
 }
